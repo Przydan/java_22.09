@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 
-public class FibonacciIterationalTest {
+public class FibonacciRecursiveTest {
     private Fibonacci fibonacci = new FibonacciIterational();
 
     @Test

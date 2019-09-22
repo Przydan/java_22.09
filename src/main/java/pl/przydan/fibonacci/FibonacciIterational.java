@@ -2,7 +2,7 @@ package pl.przydan.fibonacci;
 
 import java.math.BigDecimal;
 
-public class FibonacciIterational implements FibonacciInterface {
+public class FibonacciIterational implements Fibonacci {
     @Override
     public BigDecimal getN(int n) {
         validateArgument(n);
@@ -18,11 +18,5 @@ public class FibonacciIterational implements FibonacciInterface {
         }
 
         return result;
-    }
-
-    private void validateArgument(int n) {
-        if (n < 0) {
-            throw new FibonacciArgumentException("Argument musi być liczbą nie ujemną");
-        }
     }
 }
