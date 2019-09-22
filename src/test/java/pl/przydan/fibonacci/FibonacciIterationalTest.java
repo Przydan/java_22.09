@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
+import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 
 public class FibonacciIterationalTest {
@@ -48,6 +49,30 @@ public class FibonacciIterationalTest {
         assertEquals(expectedValue, result);
     }
 
+    @Test(expected = FibonacciArgumentException.class)
+    public void shouldThrowExceptionWhenNIsNegative() {
+        //given
+        final int n = -10;
+
+        //when
+        BigDecimal result = fibonacciInterface.getN(n);
+
+        //then
+    }
+
+    @Test
+    public void shouldThrowExceptionWhenNIsNegativeAlt() {
+        //given
+        final int n = -6;
+
+        //when
+        try {
+            BigDecimal result = fibonacciInterface.getN(n);
+            fail("Wyjątek nie został rzucony");
+        } catch (FibonacciArgumentException e) {
+            //wyrzucono wyjątek
+        }
+    }
 
 
 }
